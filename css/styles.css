@@ -1,18 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     color: rgb(0, 0, 0);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    height: 100vh;
+
 }
 
 .clean:after{
-
+    content: "";
     display: table;
-
+    clear: both;
 }
 
 header {
-    height: 60vh;
+    position: relative;
+    height: 50vh;
     width: 100%;
-    padding-top: 100px;
+    padding-top: 150px;
+    padding-bottom: 100px;
     background: url(fondo3.png), linear-gradient(to left, rgb(170, 170, 170), red);
 }
 
@@ -28,7 +39,7 @@ header {
     width: 350px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,);
+    transform: translate(-50%, -50%);
 }
 
 .presupuesto_valor {
@@ -36,6 +47,11 @@ header {
     text-align: center;
     margin-bottom: 25px;
     letter-spacing: 2px;
+}
+
+.derecha {
+    float: right;
+    display: flex;
 }
 
 .presupuesto_ingreso, .presupuesto_egreso {
@@ -51,3 +67,109 @@ header {
 .presupuesto_egreso {
     background-color: orangered;
 }
+
+.presupuesto_ingreso--texto, .presupuesto_egreso--texto {
+    float: left;
+    margin-top: 2px;
+    font-size: 13px;
+}
+
+.presupuesto_ingreso--valor, .presupuesto_egreso--valor{
+    float: left;
+    letter-spacing: 1px;
+}
+
+.presupuesto_ingreso--porcentaje, .presupuesto_egreso--porcentaje {
+    float: right;
+    width: 40px;
+    font-size: 11px;
+    padding: 3px 0;
+    margin-left: 10px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.presupuesto_ingreso--porcentaje{ background-color:rgba(224, 176, 45, 0.808);}
+
+.presupuesto_egreso--porcentaje{ background-color: rgba(255, 68, 0, 0.801); }
+
+.contenedor {
+    width: 100%;
+    margin: 60px auto;
+    padding: 2%;
+}
+.ingreso {
+    float: left;
+    width: 47%;
+}
+.egreso {
+    float: right;
+    width: 47%;
+}
+h2 {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.titulo_ingreso {color: rgb(224, 176, 45);}
+.titulo_egreso { color: orangered;}
+
+.elemento {
+    padding: 13px;
+    border-bottom: 1px solid #e7e7e7;
+    list-style: none;
+}
+
+.elemento:first-child {
+    border-top: 1px solid #e7e7e7;
+}
+.elemento:nth-child(even) {
+    background-color: #dbdbdb;
+}
+
+.elemento_descripcion { float: left; }
+
+.elemento_valor {
+    float: left;
+    transition: transform 0.3s;
+}
+.ingreso .elemento_valor, .ingreso .elemento_eliminar--btn{color: rgb(224, 176, 45);}
+.egreso .elemento_valor, .ingreso .elemento_eliminar--btn{color: rgb(255, 68, 0);}
+.elemento_porcentaje {
+    float: right;
+    margin-left: 20px;
+    font-size: 11px;
+    padding: 3px;
+    width: 45px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.ingreso ul li div.derecha .elemento_porcentaje { 
+    background-color: rgba(224, 176, 45, 0.445);
+    color: rgb(224, 176, 45);
+ }
+.egreso ul li div.derecha .elemento_porcentaje { 
+    background-color: rgba(255, 68, 0, 0.384);
+    color: rgb(255, 68, 0);
+}
+.elemento_eliminar { float: left;}
+
+.elemento_eliminar--btn { 
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+    transition: transform 0.3s;
+}
+
+.elemento_eliminar--btn:focus { outline: none;}
+.elemento_eliminar--btn:active { transform: translateY(2px);}
+
+.elemento:hover .elemento_eliminar--btn { display: block;}
+.elemento:hover .elemento_valor { transform: translateX(-20px);}
+.elemento:hover .elemento_porcentaje { transform: translateX(-20px);}

@@ -89,10 +89,60 @@ header {
     border-radius: 4px;
 }
 
-.presupuesto_ingreso--porcentaje{ background-color:rgba(224, 176, 45, 0.808);}
-
 .presupuesto_egreso--porcentaje{ background-color: rgba(255, 68, 0, 0.801); }
 
+.agregar {
+    padding: 14px;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #f7f7f7;
+}
+.agregar_contenedor {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.agregar_tipo {
+    width: 55px;
+    border: 1px solid #e7e7e7;
+    height: 44px;
+    font-size: 18px;
+    color: inherit;
+    margin-right: 10px;
+    transition: all 0.3s;
+}
+
+.agregar_descripcion, .agregar_valor {
+    border: 1px solid #e7e7e7;
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 12px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.agregar_descripcion { width: 50%; }
+.agregar_valor { width: 100px; }
+
+.agregar_btn {
+    font-size: 35px;
+    background: none;
+    border: none;
+    color: rgb(22, 170, 54);
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 10px;
+}
+
+.agregar_btn:active {transform: ;}
+
+.agregar_tipo:focus,
+.agregar_descripcion:focus,
+.agregar_valor:focus {
+    outline: none;
+}
 .contenedor {
     width: 100%;
     margin: 60px auto;
